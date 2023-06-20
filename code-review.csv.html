@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Code Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* basic style */
+    body {
+      font-family: Helvetica;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: green;
+    }
+
+    h3 {
+      font-size: 16px;
+      padding-left: 5px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      white-space: pre-wrap;
+      margin: 0;
+    }
+
+    pre {
+      margin: 0
+    }
+
+    code {
+      border: 1px solid #999;
+      display: block;
+      white-space: pre-wrap;
+    }
+
+    /* links in headlines */
+    h3.lines-headline>a {
+      color: #005bbb;
+      text-decoration: none;
+    }
+
+    h3.lines-headline>a:hover {
+      text-decoration: underline;
+    }
+
+    /* table style */
+    table.review-table {
+      font-size: 14px;
+      padding-left: 10px;
+    }
+
+    table.review-table .caption {
+      font-weight: bold;
+      vertical-align: top;
+    }
+
+    table.review-table tr>td:first-child {
+      width: 120px
+    }
+
+    /* priority indicator */
+    .text>span:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+      margin-left: -15px;
+    }
+
+    .text>span.prio-high:before {
+      background: #FF4500;
+    }
+
+    .text>span.prio-medium:before {
+      background: #FFD700;
+    }
+
+    .text>span.prio-low:before {
+      background: #9ACD32;
+    }
+
+    .text>span.prio-none:before {
+      background: #D3D3D3;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="main-headline">Code Review Results</h1>
+  <section class="file-section">
+    <h2 class="file-section-headline">/scripts/DescriptiveAnalysis.py</h2>
+    <h3 class="lines-headline">
+      <a href="">Position: 47:0-55:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Add reference to math</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Maintainability</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>Maybe add a reference to the math for computing the lower and upper bounds. It makes checking correctness easier and you may need to refer to it at a later point in time.</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">e4ac40563dfade21ced05cf94d46d72c164830af</td>
+      </tr>
+    </table>
+    <h3 class="lines-headline">
+      <a href="">Position: 212:0-214:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Variable names too long</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Best Practices</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>I would call it df_patternmean for example.</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">e4ac40563dfade21ced05cf94d46d72c164830af</td>
+      </tr>
+    </table>
+    <h3 class="lines-headline">
+      <a href="">Position: 216:0-219:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Lines too long, hard to read</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Code-Style</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>The first line is hard to parse. Part of the problem is the long variable name. But you could also split up this line into more smaller lines with intermediate variables.
+
+It might be clearer if you used a percentile function and got the value at 33, 66 percentiles. Also there might be a function in pandas that does this binning for you.</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">e4ac40563dfade21ced05cf94d46d72c164830af</td>
+      </tr>
+    </table>
+    <h3 class="lines-headline">
+      <a href="">Position: 221:0-228:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Just make new columns with pandas</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Best Practices</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>You can avoid the .apply here by simply making the &quot;full symmetry&quot; and &quot;unidirection symmetry&quot; columns in the dataframe.</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">e4ac40563dfade21ced05cf94d46d72c164830af</td>
+      </tr>
+    </table>
+    <h3 class="lines-headline">
+      <a href="">Position: 230:0-246:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Separate plotting code from data processing code</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Code-Style</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>This block is in the same cell as the block above. I would separate the plotting code into a different cell in jupyter noteobook.</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">e4ac40563dfade21ced05cf94d46d72c164830af</td>
+      </tr>
+    </table>
+    <h3 class="lines-headline">
+      <a href="">Position: 256:0-262:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Do you need to shuffle the train and test split?</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Reliability</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>Are there any biases to using the first 40 rows for testing? Do you need to shuffle the test and train rows?</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">e4ac40563dfade21ced05cf94d46d72c164830af</td>
+      </tr>
+    </table>
+  </section>
+  <section class="file-section">
+    <h2 class="file-section-headline">/measures/quadtree/calculate_quadtree.py</h2>
+    <h3 class="lines-headline">
+      <a href="">Position: 47:71-47:85</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">len(np.arange(0,grid_size_rows//2))</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Code-Style</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>Why len(np.arange(0,grid_size_rows//2))?
+
+Can&#x27;t you do simply set the length to (grid_size_rows//2-0)?</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">439e8d79198575f9386a9b049829eb228cab1626</td>
+      </tr>
+    </table>
+  </section>
+  <section class="file-section">
+    <h2 class="file-section-headline">/measures/local spatial complexity/calculate_local_spatial_complexity.py</h2>
+    <h3 class="lines-headline">
+      <a href="">Position: 27:0-76:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Break into a helper function</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Best Practices</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>This should be a helper function to increase readability of the code.</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">439e8d79198575f9386a9b049829eb228cab1626</td>
+      </tr>
+    </table>
+    <h3 class="lines-headline">
+      <a href="">Position: 29:5-32:23</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Simplify the logic</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Complexity</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>Perhaps you can use a dictionary to map from dirn --&gt; (i&#x27;, j&#x27;) so that you can simply write,
+
+
+if grid_size &gt; i&#x27; &gt; 0 and grid_size &gt; j&#x27; &gt; 0: 
+  if grid[i&#x27;, j&#x27;] &#x3D;&#x3D; col2:
+    count_neigh +&#x3D; 1
+  if grid[i, j] &#x3D;&#x3D; col1 and grid[i&#x27;, j&#x27;] &#x3D;&#x3D; col2:
+    count_tuples +&#x3D; 1</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">439e8d79198575f9386a9b049829eb228cab1626</td>
+      </tr>
+    </table>
+    <h3 class="lines-headline">
+      <a href="">Position: 93:0-94:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">&quot;pattern&quot; vs &quot;grid&quot;</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Best Practices</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>The grid argument is called &quot;grid&quot; in other metric files. It helps to be consistent. Then pattern.copy() could be named &quot;grid_copy&quot;</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">439e8d79198575f9386a9b049829eb228cab1626</td>
+      </tr>
+    </table>
+    <h3 class="lines-headline">
+      <a href="">Position: 138:0-142:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Stronger/more interesting test case</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Reliability</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>Perhaps a stronger test case is required here. These 4 patterns don&#x27;t test local spatial complexity very extensively.</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">439e8d79198575f9386a9b049829eb228cab1626</td>
+      </tr>
+    </table>
+    <h3 class="lines-headline">
+      <a href="">Position: 147:0-151:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Where do these test values come from?</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Reliability</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>Why did you get the test values/true outputs of the function to test against? Is that source reliable?</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">439e8d79198575f9386a9b049829eb228cab1626</td>
+      </tr>
+    </table>
+  </section>
+  <section class="file-section">
+    <h2 class="file-section-headline">/measures/intricacy/calculate_intricacy.py</h2>
+    <h3 class="lines-headline">
+      <a href="">Position: 112:0-118:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Helper function</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Best Practices</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>You should put this code into a helper function &quot;initialize_graph()&quot; or &quot;initialize_graph_edges()&quot; for readability. You&#x27;d call the function twice, once for 4-n and once for 8-n which means the code is slower but readability is more important since the code is very fast anyway for your grid sizes.</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">439e8d79198575f9386a9b049829eb228cab1626</td>
+      </tr>
+    </table>
+  </section>
+  <section class="file-section">
+    <h2 class="file-section-headline">/measures/entropy_of_means/calculate_entropy_of_means.py</h2>
+    <h3 class="lines-headline">
+      <a href="">Position: 30:0-42:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Why use a third party implementation?</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Reliability</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>Why use the stackexchange solution? If I understand the metric correctly, I think you need 2 functions:
+- smooth() which could use a convolution to smooth the grid
+- entropy() which takes the smoothed grid and computes the entropy with sum over p*logp</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">439e8d79198575f9386a9b049829eb228cab1626</td>
+      </tr>
+    </table>
+  </section>
+  <section class="file-section">
+    <h2 class="file-section-headline">/scripts/MixedEffectsModelling.R</h2>
+    <h3 class="lines-headline">
+      <a href="">Position: 5:0-15:0</a>
+    </h3>
+    <table class="review-table">
+      <tr class="row-priority">
+        <td class="caption">Priority</td>
+        <td class="text">
+          <span class="prio-0">0</span>
+        </td>
+      </tr>
+      <tr class="row-title">
+        <td class="caption">Title</td>
+        <td class="text">Split up the script into smaller files?</td>
+      </tr>
+      <tr class="row-category">
+        <td class="caption">Category</td>
+        <td class="text">Best Practices</td>
+      </tr>
+      <tr class="row-description">
+        <td class="caption">Description</td>
+        <td class="text">
+          <p>I&#x27;m not familiar with R so I&#x27;m not what the best solution is but having a single script with all this functionality makes the code harder to understand.</p>
+        </td>
+      </tr>
+      <tr class="row-sha">
+        <td class="caption">SHA</td>
+        <td class="text">a35e3c807291b4ab176a5c761a57665048db2b87</td>
+      </tr>
+    </table>
+  </section>
+</body>
+
+</html>
