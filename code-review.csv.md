@@ -109,3 +109,33 @@ if grid_size &gt; i&#x27; &gt; 0 and grid_size &gt; j&#x27; &gt; 0:
 * Category: `Best Practices`
 * Description: `I&#x27;m not familiar with R so I&#x27;m not what the best solution is but having a single script with all this functionality makes the code harder to understand.`
 * SHA: `a35e3c807291b4ab176a5c761a57665048db2b87`
+### Position: `63:0-64:0`
+* Priority: `0`
+* Title: `Rewrite this function with a for-loop over models/data-splits?`
+* Category: `Code-Style`
+* Description: `Can you rewrite this function using a for-loop over an array of models and data-splits? The advantage is you can generalize to more than 3 folds. Also the code becomes more modular and easier to understand.`
+* SHA: `695e0f021fec5f8164312093dd2f81ca53bf0dcd`
+### Position: `102:6-102:31`
+* Priority: `0`
+* Title: `More meaningful flag variable`
+* Category: `Code-Style`
+* Description: `You could use a string variable instead (e.g. dependent_var) and have values &quot;complexity&quot; or &quot;beauty&quot;`
+* SHA: `695e0f021fec5f8164312093dd2f81ca53bf0dcd`
+### Position: `189:0-192:0`
+* Priority: `0`
+* Title: `Separate helper function`
+* Category: `Best Practices`
+* Description: `I think this should be separated into a helper function to make the code more readable since it&#x27;s doing something different (plotting).`
+* SHA: `695e0f021fec5f8164312093dd2f81ca53bf0dcd`
+### Position: `196:0-243:15`
+* Priority: `0`
+* Title: `Code redundancy`
+* Category: `Best Practices`
+* Description: `Using a helper function also can help reduce redundancy in code here. These two blocks of code for plotting are very similar.`
+* SHA: `695e0f021fec5f8164312093dd2f81ca53bf0dcd`
+### Position: `293:0-294:0`
+* Priority: `0`
+* Title: `More meaningful function name`
+* Category: `Best Practices`
+* Description: `Maybe something like &quot;zero_mean_one_var_normalize&quot;?`
+* SHA: `695e0f021fec5f8164312093dd2f81ca53bf0dcd`
